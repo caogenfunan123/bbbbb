@@ -10,6 +10,9 @@ theme = 'PaperMod'
 # 启用 emoji
 enableEmoji = true
 
+# 允许构建未来日期的文章
+buildFuture = true
+
 # 代码高亮
 [markup]
   [markup.highlight]
