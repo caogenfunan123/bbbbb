@@ -1,0 +1,52 @@
+{{- define "main" }}
+<article class="post-md">
+  <h1 class="post-main-title">{{ .Title }}</h1>
+  <div class="post-head-meta{{ if eq (site.Params.post.titlePosition | default "center") "center" }}-center{{ end }}">
+    <span>{{ .Date.Format (site.Params.dateFormat | default "2006-01-02") }}</span>
+    {{- if and site.Params.postInfo.updateDate .Lastmod }}
+    <span> | 更新于 {{ .Lastmod.Format (site.Params.dateFormat | default "2006-01-02") }}</span>
+    {{- end }}
+    {{- if site.Params.postInfo.wordCount }}
+    <span> | {{ .WordCount }} 字</span>
+    {{- end }}
+    {{- if site.Params.postInfo.readTime }}
+    <span> | 阅读约 {{ .ReadingTime }} 分钟</span>
+    {{- end }}
+  </div>
+
+  {{- if and (gt (len .Params.tags) 0) (or (gt (len .Params.categories) 0) true) }}
+  <div class="post-meta-tax">
+    {{- with .Params.categories }}
+    <span>分类：
+      {{- range . }}<a class="tax-link" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a> {{ end }}
+    </span>
+    {{- end }}
+    {{- with .Params.tags }}
+    <span>标签：
+      {{- range . }}<a class="tax-link" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a> {{ end }}
+    </span>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  <div class="post-content">
+    {{- .Content }}
+  </div>
+
+  {{- if site.Params.postInfo.prevAndNextLink.status }}
+  <div class="post-footer-pre-next">
+    {{- with .PrevInSection }}
+    <span><a href="{{ .RelPermalink }}">{{ site.Params.postInfo.prevAndNextLink.prevInfo | default "上一篇" }}：{{ .Title }}</a></span>
+    {{- end }}
+    <span class="post-footer-pre-next-last-span-right">
+      {{- with .NextInSection }}
+      <a href="{{ .RelPermalink }}">{{ site.Params.postInfo.prevAndNextLink.nextInfo | default "下一篇" }}：{{ .Title }}</a>
+      {{- end }}
+    </span>
+  </div>
+  {{- end }}
+</article>
+{{- if site.Params.comment.enable }}
+  {{- partial "comments.html" . }}
+{{- end }}
+{{- end }}
