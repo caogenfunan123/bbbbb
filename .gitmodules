@@ -1,3 +1,3 @@
-[submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
+# PaperMod 子模块已移除，站点已切换至 A4 主题
+# 如需恢复 PaperMod，可执行:
+#   git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
