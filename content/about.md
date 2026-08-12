@@ -11,4 +11,4 @@ layout: "page"
 
 ### 关于本站
 
-本站使用 [Hugo](https://gohugo.io/) 静态站点生成器构建，主题使用 [PaperMod](https://github.com/adityatelange/hugo-PaperMod)，部署在 [Cloudflare Pages](https://pages.cloudflare.com/) 上。
+本站使用 [Hugo](https://gohugo.io/) 静态站点生成器构建，主题使用 [A4](https://github.com/HiNinoJay/hexo-theme-A4)（Hugo 移植版），部署在 [Cloudflare Pages](https://pages.cloudflare.com/) 上。
