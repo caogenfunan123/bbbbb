@@ -14,18 +14,11 @@
     {{- end }}
   </div>
 
-  {{- if and (gt (len .Params.tags) 0) (or (gt (len .Params.categories) 0) true) }}
+  {{- with .Params.tags }}
   <div class="post-meta-tax">
-    {{- with .Params.categories }}
-    <span>分类：
-      {{- range . }}<a class="tax-link" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a> {{ end }}
-    </span>
-    {{- end }}
-    {{- with .Params.tags }}
     <span>标签：
       {{- range . }}<a class="tax-link" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a> {{ end }}
     </span>
-    {{- end }}
   </div>
   {{- end }}
 
