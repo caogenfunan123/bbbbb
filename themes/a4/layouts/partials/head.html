@@ -6,8 +6,12 @@
 {{- with site.Params.favicon }}<link rel="icon" href="{{ . | relURL }}">{{ end }}
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/markdown.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/tools.css" | relURL }}">
 {{- if or (site.Params.tool.topToc) (site.Params.tool.leftToc) }}
 <link rel="stylesheet" href="{{ "css/toc.css" | relURL }}">
+{{- end }}
+{{- if site.Params.tool.darkMode }}
+<link rel="stylesheet" href="{{ "css/dark.css" | relURL }}">
 {{- end }}
 {{- if site.Params.font.enable }}
 <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
