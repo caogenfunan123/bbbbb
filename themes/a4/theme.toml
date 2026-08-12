@@ -1,0 +1,11 @@
+name = "A4"
+license = "MIT"
+licenselink = "https://github.com/HiNinoJay/hexo-theme-A4/blob/main/LICENSE"
+description = "A Hugo port of hexo-theme-A4 - a minimal A4 paper style blog theme（类A4纸张质感极简博客主题）"
+homepage = "https://github.com/HiNinoJay/hexo-theme-A4"
+tags = ["blog", "minimal", "a4", "paper", "clean"]
+features = ["dark-mode", "toc", "waline", "tags", "categories", "pagination"]
+min_version = "0.120.0"
+
+[author]
+  name = "NinoJay (Hugo port)"
