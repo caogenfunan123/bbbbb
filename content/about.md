@@ -2,7 +2,6 @@
 title: "关于"
 date: 2026-08-05
 draft: false
-layout: "page"
 ---
 
 ## 关于我
