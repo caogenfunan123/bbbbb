@@ -1,0 +1,19 @@
+{{- if .IsHome -}}
+<header class="index-header">
+  <div class="index-logo">{{ site.Params.title | default site.Title }}</div>
+  {{- with site.Params.index.header }}
+  <div class="index-header-line">{{ . }}</div>
+  {{- else if site.Params.index.hitokoto }}
+  <div class="index-header-line" id="hitokoto">Loading...</div>
+  {{- end }}
+  {{- partial "nav.html" . }}
+</header>
+{{- else -}}
+<header class="header">
+  <div class="post-header">
+    <a class="go-home" href="{{ site.Home.RelPermalink }}">{{ partial "svg-home.html" . }} 首页</a>
+    <div class="post-header-title">{{ .Title }}</div>
+  </div>
+  {{- partial "nav.html" . }}
+</header>
+{{- end -}}
