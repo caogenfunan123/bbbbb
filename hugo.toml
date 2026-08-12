@@ -7,6 +7,9 @@ theme = 'a4'
 [pagination]
   pagerSize = 10
 
+# 首页文章列表来源（A4 首页 list 功能）
+mainSections = ['posts']
+
 # 启用 emoji
 enableEmoji = true
 
