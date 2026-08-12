@@ -1,0 +1,3 @@
+/* Waline 评论样式（基础适配） */
+.waline-container { margin-top: 48px; padding-top: 24px; border-top: 1px dashed var(--line-2); }
+.wl-comment { --waline-theme-color: #4f7dde; --waline-active-color: #04077e; }
