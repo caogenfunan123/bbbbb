@@ -1,0 +1,11 @@
+<footer class="footer">
+  {{- $footerInfo := site.Params.footerLink.info | default "©" }}
+  <div class="footer-last">
+    <span>{{ $footerInfo }}</span>
+    <span class="footer-last-span-right">
+      {{- if site.Params.post.themeInfo }}
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> &amp; <a href="https://github.com/HiNinoJay/hexo-theme-A4" target="_blank" rel="noopener">A4</a>
+      {{- end }}
+    </span>
+  </div>
+</footer>
