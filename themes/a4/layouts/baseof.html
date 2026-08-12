@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "zh-cn" }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  <div class="paper">
+    {{- if .IsHome -}}
+    <div class="index-main {{ if eq (site.Params.index.width | default "small") "middle" }}index-main-middle{{ else if eq (site.Params.index.width | default "small") "big" }}index-main-big{{ end }}">
+    {{- else -}}
+    <div class="paper-main {{ if eq (site.Params.post.width | default "middle") "big" }}paper-main-big{{ end }}">
+    {{- end -}}
+      {{- partial "header.html" . -}}
+      <main>
+        {{- block "main" . }}{{- end }}
+      </main>
+      {{- partial "footer.html" . -}}
+    </div>
+  </div>
+  {{- partial "scripts.html" . -}}
+</body>
+</html>
