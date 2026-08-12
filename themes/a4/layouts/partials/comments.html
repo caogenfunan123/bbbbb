@@ -1,0 +1,41 @@
+{{- $use := site.Params.comment.use | default "waline" }}
+{{- if eq $use "waline" }}
+<div id="waline" class="waline-container"></div>
+<script>
+  (function(){
+    var serverUrl = {{ site.Params.comment.waline.serverUrl | default "" | jsonify }};
+    if (!serverUrl) return;
+    var options = {
+      serverURL: serverUrl,
+      lang: {{ site.Params.comment.waline.lang | default "zh-CN" | jsonify }},
+      placeholder: {{ site.Params.comment.waline.placeholder | default "留下你的评论吧。" | jsonify }},
+      path: window.location.pathname
+    };
+    if (window.Waline) {
+      window.walineInstance = Waline.init(options);
+    } else {
+      document.addEventListener('DOMContentLoaded', function(){
+        window.walineInstance = Waline.init(options);
+      });
+    }
+  })();
+</script>
+{{- else if eq $use "giscus" }}
+<div class="giscus-container">
+<script src="https://giscus.app/client.js"
+  data-repo="{{ site.Params.comment.giscus.dataRepo }}"
+  data-repo-id="{{ site.Params.comment.giscus.dataRepoId }}"
+  data-category="{{ site.Params.comment.giscus.dataCategory }}"
+  data-category-id="{{ site.Params.comment.giscus.dataCategoryId }}"
+  data-mapping="{{ site.Params.comment.giscus.dataMapping | default "pathname" }}"
+  data-strict="{{ site.Params.comment.giscus.dataStrict | default "0" }}"
+  data-reactions-enabled="{{ site.Params.comment.giscus.dataReactionsEnabled | default "1" }}"
+  data-emit-metadata="{{ site.Params.comment.giscus.dataEmitMetadata | default "0" }}"
+  data-input-position="{{ site.Params.comment.giscus.dataInputPosition | default "bottom" }}"
+  data-theme="{{ site.Params.comment.giscus.dataTheme | default "preferred_color_scheme" }}"
+  data-lang="{{ site.Params.comment.giscus.dataLang | default "zh-CN" }}"
+  crossorigin="anonymous"
+  async>
+</script>
+</div>
+{{- end }}
