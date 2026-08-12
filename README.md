@@ -15,6 +15,13 @@
 
 站点根 `hugo.toml` 中 `theme = 'a4'`，所有个性化配置见 `[params]` 段，完整注释可参考 `themes/a4/_example_config.toml`。
 
+## 构建状态
+
+- [x] submodule 配置修复
+- [x] header.html 模板语法修复
+- [x] taxonomy.html 标准 API 修复（.Data.Terms.Alphabetical）
+- [x] 代码复制按钮配置
+
 ## 技术栈
 
 - Hugo 静态站点生成器
