@@ -1,15 +1,10 @@
 {{- define "main" }}
-<div class="taxonomy-page">
+<div class="terms-page">
   <h1 class="taxonomy-title">{{ .Title }}</h1>
-  <div class="post-list">
-    {{- range .Paginator.Pages }}
-    <article class="post">
-      <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      <div class="post-date">{{ .Date.Format (site.Params.dateFormat | default "2006-01-02") }}</div>
-      {{- with .Summary }}<div class="post-except">{{ . }}</div>{{ end }}
-    </article>
+  <div class="terms-list">
+    {{- range .Pages.ByCount.Reverse }}
+    <a class="term-item" href="{{ .RelPermalink }}">{{ .Title }} <span class="term-count">{{ .Count }}</span></a>
     {{- end }}
   </div>
-  {{- partial "paginator.html" .Paginator }}
 </div>
 {{- end }}
