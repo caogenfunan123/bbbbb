@@ -3,7 +3,7 @@
   {{- .Content }}
 </div>
 {{- if site.Params.index.list }}
-  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- $pages := where site.RegularPages "Section" "in" site.MainSections }}
   {{- $paged := (.Paginate $pages) }}
   <div class="post-list">
     {{- range $paged.Pages }}
