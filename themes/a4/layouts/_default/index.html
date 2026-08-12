@@ -1,0 +1,20 @@
+{{- define "main" }}
+<div class="index-content post-md">
+  {{- .Content }}
+</div>
+{{- if site.Params.index.list }}
+  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- $paged := (.Paginate $pages) }}
+  <div class="post-list">
+    {{- range $paged.Pages }}
+    <article class="post">
+      <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <div class="post-date">{{ .Date.Format (site.Params.dateFormat | default "2006-01-02") }}</div>
+      {{- with .Summary }}<div class="post-except">{{ . }}</div>{{ end }}
+      <a class="read-more" href="{{ .RelPermalink }}">阅读全文</a>
+    </article>
+    {{- end }}
+  </div>
+  {{- partial "paginator.html" $paged }}
+{{- end }}
+{{- end }}
