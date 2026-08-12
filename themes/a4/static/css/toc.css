@@ -1,0 +1,48 @@
+/* 左侧 TOC（大屏浮现） */
+.left-toc-container {
+  top: 100px;
+  left: 1px;
+  bottom: 110px;
+  overflow-y: auto;
+  max-height: -webkit-fill-available;
+  position: fixed;
+  scrollbar-width: none;
+  display: none;
+}
+.left-toc-container::-webkit-scrollbar { width: 10px; display: none; }
+.left-toc-container::-webkit-scrollbar-thumb { background: white; border-radius: 5px; }
+.left-toc-container::-webkit-scrollbar-track { background: transparent; }
+
+.tocify ul, .tocify li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 30px;
+}
+.tocify-header { text-indent: 10px; }
+.tocify-subheader { text-indent: 20px; display: none; border-left-width: 1px !important; }
+.tocify-subheader li { font-size: 12px; }
+.tocify-subheader .tocify-subheader { text-indent: 30px; }
+.tocify-subheader .tocify-subheader .tocify-subheader { text-indent: 40px; }
+
+.tocify a {
+  color: #999;
+  font-size: 13px;
+  font-weight: 400;
+  border-left: 4px solid transparent;
+  padding: 4px 20px;
+  display: block;
+}
+.tocify a:hover,
+.tocify a.active {
+  color: #4f7ddf;
+  border-left-color: #4f7ddf;
+  background: transparent;
+}
+.tocify .active > a { font-weight: 700; }
+.tocify .active > ul.nav { display: block; }
+
+@media screen and (min-width: 1500px) {
+  .left-toc-container { display: block; }
+}
