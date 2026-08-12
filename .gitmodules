@@ -1,3 +1,8 @@
-# PaperMod 子模块已移除，站点已切换至 A4 主题
-# 如需恢复 PaperMod，可执行:
-#   git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+# PaperMod 子模块（保留声明以便 Cloudflare 构建成功拉取）
+# 站点当前使用 A4 主题（theme = 'a4'），PaperMod 仅为无害存在的子模块
+# 如需彻底移除 PaperMod，请在本地执行：
+#   git rm --cached themes/PaperMod
+#   git commit -m "remove PaperMod submodule"
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
