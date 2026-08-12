@@ -54,6 +54,7 @@ buildFuture = true
   description = '分享技术、生活和思考的个人博客'
   favicon = '/favicon.ico'
   displayTitleInTab = false  # 是否在浏览器标签页显示文章标题
+  showCodeCopyButtons = true # 代码块复制按钮
 
   # ---- 首页配置 ----
   [params.index]
