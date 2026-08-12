@@ -2,8 +2,8 @@
 <div class="terms-page">
   <h1 class="taxonomy-title">{{ .Title }}</h1>
   <div class="terms-list">
-    {{- range .Pages.ByCount.Reverse }}
-    <a class="term-item" href="{{ .RelPermalink }}">{{ .Title }} <span class="term-count">{{ .Count }}</span></a>
+    {{- range .Data.Terms.Alphabetical }}
+    <a class="term-item" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="term-count">{{ .Count }}</span></a>
     {{- end }}
   </div>
 </div>
