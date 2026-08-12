@@ -1,0 +1,7 @@
+<script src="{{ "js/main.js" | relURL }}"></script>
+{{- if site.Params.index.hitokoto }}
+<script src="{{ "js/hitokoto.js" | relURL }}"></script>
+{{- end }}
+{{- if and site.Params.comment.enable (eq (site.Params.comment.use | default "waline") "waline") }}
+<script src="https://unpkg.com/@waline/client@v3/dist/waline.js"></script>
+{{- end }}
