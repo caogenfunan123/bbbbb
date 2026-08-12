@@ -3,7 +3,7 @@
 <head>
   {{- partial "head.html" . -}}
 </head>
-<body>
+<body{{ if site.Params.tool.returnToTop }} data-return-to-top{{ end }}{{ if site.Params.tool.darkMode }} data-dark-mode{{ end }}{{ if site.Params.showCodeCopyButtons }} data-code-copy{{ end }}>
   <div class="paper">
     {{- if .IsHome -}}
     <div class="index-main {{ if eq (site.Params.index.width | default "small") "middle" }}index-main-middle{{ else if eq (site.Params.index.width | default "small") "big" }}index-main-big{{ end }}">
