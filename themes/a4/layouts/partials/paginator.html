@@ -1,19 +1,19 @@
-{{- if gt .Paginator.TotalPages 1 }}
+{{- if gt .TotalPages 1 }}
 <nav class="paginator" aria-label="分页">
-  {{- if .Paginator.HasPrev }}
-  <a href="{{ .Paginator.Prev.URL }}">«</a>
+  {{- if .HasPrev }}
+  <a href="{{ .Prev.URL }}">«</a>
   {{- else }}
   <span class="space">«</span>
   {{- end }}
-  {{- range .Paginator.Pagers }}
-    {{- if eq .PageNumber $.Paginator.PageNumber }}
+  {{- range .Pagers }}
+    {{- if eq .PageNumber $.PageNumber }}
     <span class="current">{{ .PageNumber }}</span>
     {{- else }}
     <a href="{{ .URL }}">{{ .PageNumber }}</a>
     {{- end }}
   {{- end }}
-  {{- if .Paginator.HasNext }}
-  <a href="{{ .Paginator.Next.URL }}">»</a>
+  {{- if .HasNext }}
+  <a href="{{ .Next.URL }}">»</a>
   {{- else }}
   <span class="space">»</span>
   {{- end }}
