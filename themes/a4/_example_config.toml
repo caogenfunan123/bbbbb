@@ -1,0 +1,94 @@
+# ============================================================================
+# A4 Hugo 主题配置示例
+# 使用方法：把下面内容复制到站点根目录 hugo.toml 的 [params] 段中（或新建 params.toml）
+# 当前站点根配置已设置 theme = "a4"，其余个性化配置如下：
+# ============================================================================
+
+[params]
+  # ---- 站点信息 ----
+  title = "我的博客"
+  description = "分享技术、生活和思考的个人博客"
+  favicon = "/favicon.ico"
+  displayTitleInTab = false  # 是否在浏览器标签页显示文章标题
+
+  # ---- 导航菜单（对应站点 hugo.toml 的 [[menus.main]]）----
+  # 首页固定显示，其余菜单在站点根配置中定义，如：
+  #   [[menus.main]]
+  #     name = "文章"
+  #     url = "/posts/"
+  #   [[menus.main]]
+  #     name = "标签"
+  #     url = "/tags/"
+  #   [[menus.main]]
+  #     name = "分类"
+  #     url = "/categories/"
+
+  # ---- 首页配置 ----
+  [params.index]
+    header = "「让读者专注于阅读文字，写者专注于写作。」"  # 首页页眉语句；留空则显示默认
+    hitokoto = false      # 一言：网络语句接口
+    footer = "Email:example@gmail.com"  # 首页页脚（Email:xxx 会自动邮箱链接化）
+    titlePosition = "left"  # center | left
+    width = "small"         # small | middle | big
+    list = false            # 开启后首页展示文章列表
+
+  # ---- 页脚链接 ----
+  [params.footerLink]
+    info = "© 2024-2026 My Blog"
+    # 额外链接通过站点根配置 [[menus.footer]] 定义
+
+  # ---- 文章页配置 ----
+  [params.post]
+    width = "middle"        # middle | big
+    titlePosition = "center"  # center | left
+    themeInfo = true        # 页脚右侧声明本站信息
+
+  # ---- 工具开关 ----
+  [params.tool]
+    darkMode = true         # 暗黑模式
+    returnToTop = true      # 回到顶部按钮
+    topToc = true           # 文章顶部目录
+    leftToc = true          # 文章左侧目录（大屏浮现）
+
+  # ---- 文章信息 ----
+  [params.postInfo]
+    updateDate = true       # 显示最近更新时间
+    wordCount = true        # 显示字数统计
+    readTime = true         # 显示阅读耗时
+    [params.postInfo.prevAndNextLink]
+      status = true         # 上一篇/下一篇
+      prevInfo = "上一篇"
+      nextInfo = "下一篇"
+
+  # ---- 字体 ----
+  [params.font]
+    enable = false          # 是否启用字体开关（霞鹜文楷）
+
+  # ---- 自定义 CSS 注入 ----
+  [params.inject]
+    css = "css/custom.css"  # 可选：在 static/css/custom.css 编写自定义样式
+
+  # ---- 评论（默认 waline）----
+  [params.comment]
+    enable = false
+    use = "waline"          # waline | giscus | twikoo | artalk
+    [params.comment.waline]
+      serverUrl = ""        # 你的 Waline 服务地址，如 https://xxx.vercel.app
+      lang = "zh-CN"
+      placeholder = "留下你的评论吧。"
+    [params.comment.giscus]
+      dataRepo = ""
+      dataRepoId = ""
+      dataCategory = ""
+      dataCategoryId = ""
+      dataMapping = "pathname"
+      dataTheme = "preferred_color_scheme"
+      dataLang = "zh-CN"
+
+# ============================================================================
+# 站点根 hugo.toml 还需要设置：
+#   theme = "a4"
+#   [taxonomies]
+#     category = "categories"
+#     tag = "tags"
+# ============================================================================
