@@ -1,8 +1,8 @@
 {{- if .IsHome -}}
 <header class="index-header">
   <div class="index-logo">{{ site.Params.title | default site.Title }}</div>
-  {{- with site.Params.index.header }}
-  <div class="index-header-line">{{ . }}</div>
+  {{- if site.Params.index.header }}
+  <div class="index-header-line">{{ site.Params.index.header }}</div>
   {{- else if site.Params.index.hitokoto }}
   <div class="index-header-line" id="hitokoto">Loading...</div>
   {{- end }}
